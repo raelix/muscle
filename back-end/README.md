@@ -1,4 +1,4 @@
-# Muscle
+# Muscle Back-End
 
 ## REST API Documentation
 
