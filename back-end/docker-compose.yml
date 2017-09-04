@@ -1,0 +1,22 @@
+version: "2"
+services:
+
+  db:
+    image: postgres
+    expose:
+      - "5432"
+    # ports:
+    #   - "5432:5432"
+
+  web:
+    image: node:argon
+    build: .
+    container_name: api_nodejs
+    volumes:
+      - ./:/app
+    ports:
+      - "8000:8000"
+    working_dir: /app
+    command: bash -c "./wait-for-it.sh"
+    links:
+      - db
