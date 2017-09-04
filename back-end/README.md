@@ -2,24 +2,24 @@
 
 REST API Example
 
-# get /api/users/:token
-## get user object by token
+# /api/users/:token *GET*
+#### get user object by token
 ```javascript
 {
     "token": "2d23d34d32d32"
 }
 ```
 
-# post /api/users/login
-## register new user with passed username and create token
+# /api/users/login *POST*
+### register new user with passed username and create token
 ```javascript
 {
     "username": "raelix"
 }
 ```
 
-# post /api/users/loginWithFacebook
-## add the user with passed facebook_id and create token or get the existing user with this facebook_id
+# /api/users/loginWithFacebook *POST*
+### add the user with passed facebook_id and create token or get the existing user with this facebook_id
 ```javascript
 {
     "username": "raelix",
@@ -27,8 +27,8 @@ REST API Example
 }
 ```
 
-# post /api/users/link
-## change facebook id by passed token or if token does not exists create new user, for unlink pass facebook_id="" empty
+# /api/users/link *POST*
+### change facebook id by passed token or if token does not exists create new user, for unlink pass facebook_id="" empty
 ```javascript
 {
     "username": "raelix",
@@ -37,7 +37,7 @@ REST API Example
 ```
 
 # get /api/scores
-## return array of objects, only for debug
+### return array of objects, only for debug
 ```javascript
 {
     "id": 5, //unique id of this score
@@ -48,8 +48,8 @@ REST API Example
 }
 ```
 
-# post /api/scores
-## post object:
+# /api/scores *POST*
+### post object:
 ```javascript
 {
     "mode_id": 1,
@@ -57,7 +57,7 @@ REST API Example
     "score": 2222
 }
 ```
-## return 0 if token not found 1 otherwise
+### return 0 if token not found 1 otherwise
 ```javascript
 [
     {
@@ -66,8 +66,8 @@ REST API Example
 ]
 ```
 
-# post /api/scores/max
-## post object:
+# /api/scores/max *POST*
+### post object:
 ```javascript
 {
     "filter_on_nationality": false,
@@ -77,7 +77,7 @@ REST API Example
     "mode_id":1  // base mode
 }
 ```
-## return array list of objects
+### return array list of objects
 ```javascript
 {
        "positions": 5, //position in ranking
